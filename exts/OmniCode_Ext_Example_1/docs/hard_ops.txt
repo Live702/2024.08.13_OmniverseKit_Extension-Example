@@ -1,0 +1,135 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+24.08.15.1739
+C:\Users\Conda\source\repos\goo\exts
+goo foo demo
+C:\Users\Conda\source\repos\kit-exts-project_2\app\kit\extscore\omni.ui_query\config\
+extension.toml
+omnicode wont launch < two versions, unistalled both reinstalled 2022.3.3 works
+maybe issue where I missdragged folder corrupted dir?
+C:\Users\Conda\.nvidia-omniverse\logs
+C:\Users\Conda\AppData\Roaming\omniverse-launcher\Crashpad < all  files emepty
+
+24.08.13.2419 review conda env used in cuda_example_1 attempt install into
+C:\users\conda\source\repos\kit-exts-project>
+24.08.13.1431
+prints sys.executable to local window. cd folder print terminal?
+trying to get trace printing working, toolchain inconsitent, 
+hot reloads fail without error
+< missunderstanding of python class memember declaration? 
+last few days moving to omnicode, moving hard ops here from cuda_example_1
+24.08.10.1433 sim closes for no reason
+24.08.10.1433 "width": "1280", console program locks up sim
+24.08.10.1355 seems to work, required pip #sup9
+24.08.10.1138 lok
+24.08.08.1052 pip standalone 
+python3.10 -m venv env_isaacsim source env_isaacsim/bin/activate
+pip install isaacsim==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+pip install isaacsim-extscache-physics==4.1.0.0 isaacsim-extscache-kit==4.1.0.0 isaacsim-extscache-kit-sdk==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+24.08.08.0959 'sim = isaacsim.SimulationApp()' halucinated LLM nonsense? -_-  < #sup8
+24.08.07.2131 lok > script location > setup_python_env.bat > why not env hook fx
+C:\Users\Conda\AppData\Local\ov\pkg\isaac-sim-2023.1.1\kit\site\
+#sup7 confrims no PYTHONPATH
+conda env add "no py path SET PYTHONPATH=%PYTHONPATH%;%~dp0site" still not work
+C:\Users\Conda\anaconda3\envs\test_7_isaacsim_detect_red\lib\venv\scripts\nt\activate.bat
+24.08.06.1120 messed up by installing in base, just fixed, make conda disallow
+24.08.06.1052 create conda install pack, #Sup6
+24.08.06.0934 isaac sim devops eval raw install, interogated gpt on process, found issac py ver
+24.08.01.0943 test_5_display_ocr_cuda.py fx on test_6_wincap_ocr, next? now 
+test_6_wincap_ocr.py, #Sup5
+24.08.01.0943 delete and renamed test_6_wndcap_ocr >  test_6_wincap_ocr, try,
+conda env create -n test_6_wincap_ocr -f '.\env\env_5(test_display_ocr_cuda).yaml'
+24.07.30.1454 env issues not duplicating not delting > try manual test_display_ocr_cuda
+dir delete > try conda env create -n new_env_name -f env_5(test_display_ocr_cuda).yaml
+24.07.30.1323 223pm target, frames video? frame stream? Sup3
+24.07.29.1546 displays full screen, ocr's text > next frames / video
+24.07.29.1453 will print detection, result type? display
+24.07.29.1317 test [] fx, ocr
+24.07.28.1357 cuda, cv2 fx > data capture > multi frame data capture < speed and gpu use
+verification Sup2, update readme
+24.07.23.2020 win ver 21H2
+24.07.18.1716 found docs here via bookmark https://pytorch.org/get-started/locally/
+24.07.18.1618 Issues with gpt command not able to find cuda package, similar issue to pip.
+web resources loc unclear. review python_example_1 for cuda installer tree. Must get cuda
+pakcage alignment. SDK? #Sup1
+--
+#Sup9
+conda create -n test_8_isaacsim_env python=3.10
+conda activate test_8_isaacsim_env
+pip install --upgrade pip
+pip install isaacsim==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+pip show isaacsim
+python -c "import isaacsim"
+
+#Sup8
+sim = isaacsim.SimulationApp()
+<<< 
+https://docs.omniverse.nvidia.com/py/isaacsim/source/extensions/omni.isaac.kit/docs/index.html
+<<<
+# At top of your application
+from omni.isaac.kit import SimulationApp
+config = {
+     width: "1280",
+     height: "720",
+     headless: False,
+}
+simulation_app = SimulationApp(config)
+
+# Rest of the code follows
+...
+simulation_app.close()
+
+#Sup7
+import os
+import sys
+path_SystemRoot = os.environ.get('SystemRoot')
+path_Python = os.environ.get('PYTHONPATH')
+if path_SystemRoot:
+    sys.stdout.write(f"SystemRoot : {path_SystemRoot}\n")
+if path_Python:
+    sys.stdout.write(f"PYTHONPATH: {path_Python}\n")
+
+import shutil
+python_exe_path = shutil.which("python")  # Searches the PATH for "python"
+if python_exe_path:
+    sys.stdout.write(f"Python executable path: {python_exe_path}\n")
+
+#Sup6
+conda create -n test_7_isaacsim_detect_red python=3.10.13
+
+#Sup5
+Todo 
+Generlized module installer? "I noticed that you... install? [y]/n"
+
+#Sup4
+conda activate test_cuda_ocr 
+python .\scripts\tests\test_5_display_ocr_cuda.py works
+how 
+conda env update -f '.\env\env_5(test_display_ocr_cuda).yaml' fail?
+
+
+#Sup3
+Wow this is a challenging topic, there are so many things to consider!
+Firstly consider our base functionality:
+-Read a single frame for text data using cuda accellerated pytorch
+Single Frame > Multi Frame > Frames from Video > Frame stream
+Bot
+How interact with game?
+How parse enviorment?
+< 3d render from images < 3d enviorment render persistnat
+< game model, game concpets
+How make capture decisons
+> keep player in view > keep teams in view
+> how determine clipping / not clipping 
+
+attack red?
+
+#Sup2
+data capture to []
+multi frame to []
+speed
+
+#Sup1
+cuda channel
+gpu driver
+wepsite with toggles
+check bookmarks
