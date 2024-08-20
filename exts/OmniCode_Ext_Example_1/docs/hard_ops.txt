@@ -1,4 +1,18 @@
 //////////////////////////////////////////////////////////////////////////////////////////
+24.08.20.0841
+implemented console logging and try catch
+next objective > reposition camera, resize box
+why no window?
+lok
+24.08.16.1040
+camera location
+1437 >
+available_methods = dir(viewport_api)
+print(available_methods)
+print(dir(viewport_api))
+> box
+lok > run and goof > git? < true
+
 24.08.15.1739
 C:\Users\Conda\source\repos\goo\exts
 goo foo demo
