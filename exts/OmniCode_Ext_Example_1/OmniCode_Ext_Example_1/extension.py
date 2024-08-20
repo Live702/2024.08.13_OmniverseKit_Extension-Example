@@ -53,9 +53,14 @@ class InscicoExample_1Extension(omni.ext.IExt):
         print(f"{datetime.datetime.now()} {self.name} Completed: startup")
 
     def on_shutdown(self):
-        print("[inscico.example_1] inscico example_1 shutdown")
-        self.viewport_widget.destroy()
-        self._window.destroy()
+        try:
+            self.viewport_widget.destroy()
+            self._window.destroy()
+
+        except Exception as e:
+            print(f"{datetime.datetime.now()} {self.name} Error: shutdown {type(e).__name__}: {e}") 
+        
+        print(f"{datetime.datetime.now()} {self.name} Completed: shutdown")
 
     def add_box_to_scene(self):
         self.box_rendered = True
