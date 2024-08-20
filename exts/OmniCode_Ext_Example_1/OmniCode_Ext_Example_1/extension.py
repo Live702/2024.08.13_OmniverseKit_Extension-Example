@@ -8,6 +8,7 @@ import omni.physx as physx
 from pxr import UsdGeom, Gf
 
 import sys
+import datetime
 
 class InscicoExample_1Extension(omni.ext.IExt):
     name = "Example_1"
@@ -16,24 +17,22 @@ class InscicoExample_1Extension(omni.ext.IExt):
         self.box_rendered = False
         self.camera_added = False
         print("\n") 
-        print(f"{self.name} init complete")
+        print(f"{datetime.datetime.now()} {self.name} Completed: init")
 
     def on_startup(self, ext_id):
-        print(f"{self.name} startup complete")
-
         #update scene
         try:
             if not self.box_rendered: 
                 self.add_box_to_scene()
-                print(f"{self.name} added a box to scene")
+                print(f"{datetime.datetime.now()} {self.name} Added to Scene: box ")
 
 
             if not self.camera_added: 
                 self.add_camera_to_scene()
-                print(f"{self.name} added a camera to scene")
+                print(f"{datetime.datetime.now()} {self.name} Added to Scene: camera")
 
         except Exception as e:
-            print(f"{self.name} Scene Error: {type(e).__name__}: {e}") 
+            print(f"{datetime.datetime.now()} {self.name} Error: Scene: {type(e).__name__}: {e}") 
 
         #update ui
         try:
@@ -44,14 +43,14 @@ class InscicoExample_1Extension(omni.ext.IExt):
                     self.viewport_widget = ViewportWidget(resolution=(1280, 720))
                     self.viewport_api = self.viewport_widget.viewport_api
 
-                    print(f"{self.name} added a window")
+                    print(f"{datetime.datetime.now()} {self.name} Added to UI: window")
 
                     #print(dir(self.viewport_api))
 
         except Exception as e:
-            print(f"{self.name} UI Error:  {type(e).__name__}: {e}") 
+            print(f"{datetime.datetime.now()} {self.name} Error: UI: {type(e).__name__}: {e}") 
 
-
+        print(f"{datetime.datetime.now()} {self.name} Completed: startup")
 
     def on_shutdown(self):
         print("[inscico.example_1] inscico example_1 shutdown")
