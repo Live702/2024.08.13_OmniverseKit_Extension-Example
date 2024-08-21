@@ -78,3 +78,9 @@ class InscicoExample_1Extension(omni.ext.IExt):
         camera_path = "/World/myNewCamera" 
         camera_prim = stage.DefinePrim(camera_path, "Camera")
         UsdGeom.Camera(camera_prim).SetFocalLength(50.0)
+
+    def add_camera_to_scene(self):
+        stage = omni.usd.get_context().get_stage()
+        camera_path = "/World/myNewCamera" 
+        camera_prim = stage.DefinePrim(camera_path, "Camera")
+        camera_prim.GetAttribute('focalLength').Set(50.0)
