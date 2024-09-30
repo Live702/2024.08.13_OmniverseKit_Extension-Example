@@ -10,16 +10,16 @@ from pxr import UsdGeom, Gf
 import sys
 import datetime
 
+import omni.kit.viewport
+#'''
 class InscicoExample_1Extension(omni.ext.IExt):
     name = "Example_1"
-    
-    def __init__(self):
+
+    def on_startup(self, ext_id):
         self.box_rendered = False
         self.camera_added = False
         print("\n") 
         print(f"{datetime.datetime.now()} {self.name} Completed: init")
-
-    def on_startup(self, ext_id):
         #update scene
         try:
             if not self.box_rendered: 
@@ -74,13 +74,15 @@ class InscicoExample_1Extension(omni.ext.IExt):
         UsdGeom.Cube(cube_prim).CreateSizeAttr(1)
 
     def add_camera_to_scene(self):
+        self.camera_added = True
         stage = omni.usd.get_context().get_stage()
         camera_path = "/World/myNewCamera" 
         camera_prim = stage.DefinePrim(camera_path, "Camera")
         UsdGeom.Camera(camera_prim).SetFocalLength(50.0)
+        #viewport_api.camera_path = camera_path
 
-    def add_camera_to_scene(self):
-        stage = omni.usd.get_context().get_stage()
-        camera_path = "/World/myNewCamera" 
-        camera_prim = stage.DefinePrim(camera_path, "Camera")
-        camera_prim.GetAttribute('focalLength').Set(50.0)
+        viewport_interface = omni.kit.viewport.get_viewport_interface()
+        viewport = viewport_interface.get_active_viewport()
+        if viewport:
+            viewport.set_camera_path(camera_path)
+#''' 

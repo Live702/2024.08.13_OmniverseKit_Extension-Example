@@ -1,4 +1,18 @@
 //////////////////////////////////////////////////////////////////////////////////////////
+24.09.30.1333
+moved code from ProArt to Desktop. fx. back on viewport not attaching to cam via campath
+
+24.09.02.0921
+They must have changed how __init__ works, using init now crashes ext. Moved to 
+on_startup()
+
+24.09.01.1224
+lok & run
+HOW TO ADD EXTENSION
+Window > Extensions > hamburger menu > settings > + symbol > add uri >
+C:\Users\Conda\source\repos\OmniCode_Ext_Example_1\exts
+OmniCode_Ext_Example_1 < will contain the a folder, thats ok
+
 24.08.21.1230
 <  camera_prim.GetAttribute('focalLength').Set(50.0)
 https://openusd.org/dev/api/class_usd_geom_camera.html
@@ -20,7 +34,10 @@ lok > run and goof > git? < true
 
 24.08.15.1739
 C:\Users\Conda\source\repos\goo\exts
-goo foo demo
+< linkedin in goo foo demo
+HOW TO ADD EXTENSION
+Window > Extensions > hamburger menu > settings > + symbol > add uri
+C:\Users\Conda\source\repos\OmniCode_Ext_Example_1\exts\OmniCode_Ext_Example_1\config
 C:\Users\Conda\source\repos\kit-exts-project_2\app\kit\extscore\omni.ui_query\config\
 extension.toml
 omnicode wont launch < two versions, unistalled both reinstalled 2022.3.3 works
